@@ -71,7 +71,7 @@ resource "aws_s3_bucket" "test_bucket" {
 
 resource "aws_s3_bucket" "test_bucket_nonprod" {
   provider = aws.nonprod
-  bucket = "test-bucket-yogi-env0-loc-v1-demo-multi${random_integer.test_bucket.result}"
+  bucket = "test-bucket-yogi-env0-loc-v1-demo-multi-nonprod${random_integer.test_bucket.result}"
   tags = merge(module.tagging.value, {
     "PermissionsBoundary" = "JuniorCPE_PermissionsBoundary"
   })
